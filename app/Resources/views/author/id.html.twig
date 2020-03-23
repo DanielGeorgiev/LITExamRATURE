@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br/>
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+        <img height="250px" width="250px" src="{{ author.picture }}">
+        <h2 style="color: #000000">{{ author.name }}</h2>
+
+        <div class="container">
+            <div class="row">
+                {% for work in author.works %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <h2 style="color: #000000">{{ work.name }}</h2>
+                            <h6 style="color: #000000">Година: {{ work.creationYear }}г. </h6>
+                            <h6 style="color: #000000">Жанр: {{ work.genre.name }}</h6>
+                            <a style="color: #000000" href="{{ work.infoSource }}" target="_blank">> Виж в zamatura.eu <</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block title %}
+    {{ author.name }}
+{% endblock %}
+

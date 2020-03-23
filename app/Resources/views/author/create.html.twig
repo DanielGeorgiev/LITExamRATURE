@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Нов автор
+{% endblock %}
+
+{% block body %}
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-horizontal" action="{{ path('create_author') }}" method="POST">
+                <fieldset>
+                    <legend>Нов Автор</legend>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="author_name">Име *</label>
+                        <input type="text" class="form-control" minlength="5" maxlength="255" required id="author_name"
+                               placeholder="Име на автора"
+                               name="author[name]">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="author_picture">Снимка *</label>
+                        <input type="text" class="form-control" minlength="10" maxlength="255" id="author_picture"
+                               placeholder="Снимка на автора (линк)"
+                               name="author[picture]">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="author_birthYear">Година на раждане *</label>
+                        <input type="text" class="form-control" minlength="4" maxlength="4" id="author_birthYear"
+                               placeholder="Година на раждане на автора"
+                               name="author[yearOfBirth]">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="author_deathYear">Година на умиране *</label>
+                        <input type="text" class="form-control" minlength="4" maxlength="4" id="author_deathYear"
+                               placeholder="Година на умиране на автора"
+                               name="author[yearOfDeath]">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-primary" href="{{ path('homepage') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Add new author</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}

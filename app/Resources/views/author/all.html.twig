@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Автори
+{% endblock %}
+
+{% block body %}
+    <br/>
+    <h1>Автори</h1>
+
+    <div class="album py-5">
+        <div class="container">
+            <div class="row">
+                {% for author in authors %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" style="height: 225px; width: 100%; display: block;"
+                                 src="{{ author.picture }}">
+                            <hr/>
+                            <h2 style="color: #000000;font-style: italic">{{ author.name }}</h2>
+                            <hr/>
+                            <div class="card-body" style="color: #000000">
+                                <p>Роден: {{ author.yearOfBirth }}г.</p>
+                                <p>Починал: {{ author.yearOfDeath }}г.</p>
+                                <p>Брой матуритетни произведения: {{ author.works | length }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="{{ path('show_author_id', {'id': author.id}) }}"
+                                           class="btn btn-sm btn-outline-secondary">Разгледай</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-horizontal" action="{{ path('create_work') }}" method="POST">
+                <fieldset>
+                    <legend>Нова Творба</legend>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="work_name">Име *</label>
+                        <input type="text" class="form-control" minlength="2" maxlength="255" required id="work_name"
+                               placeholder="Име на творбата"
+                               name="work[name]">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="work_infoSource">Подробности *</label>
+                        <input type="text" class="form-control" minlength="10" maxlength="255" id="work_infoSource"
+                               placeholder="Инфо за творбата (линк)"
+                               name="work[infoSource]">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="work_creationYear">Година на създаване *</label>
+                        <input type="text" class="form-control" minlength="4" maxlength="4" id="work_creationYear"
+                               placeholder="Година на създаване на творбата"
+                               name="work[creationYear]">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="work_author">Автор *</label>
+                        <div class="col-sm-12">
+                            {{ form_widget(form.author) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="work_genre">Жанр *</label>
+                        <div class="col-sm-12">
+                            {{ form_widget(form.genre) }}
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-primary" href="{{ path('homepage') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Add new work</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block title %}
+    Нова творба
+{% endblock %}
+

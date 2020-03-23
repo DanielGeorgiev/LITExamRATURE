@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Персонажи</h1>
+    <br/>
+    {% for character in characters %}
+        <div class="bg-white rounded box-shadow">
+            <br/>
+            <h3 style="color: #000000; font-style: italic">{{ character.name }} </h3>
+            <h5 style="color:#000000;">{{ character.work.name }} - {{ character.work.author.name }}</h5>
+            <br/>
+        </div>
+        <hr/>
+    {% endfor %}
+{% endblock %}
+
+{% block title %}
+    Персонажи
+{% endblock %}
+

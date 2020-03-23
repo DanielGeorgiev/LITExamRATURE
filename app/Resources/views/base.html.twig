@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>LITExamRATURE -
+        {% block title %}{% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"> {% block stylesheets %}{% endblock %}
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <script src="https://kit.fontawesome.com/25bd7313c3.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h3 class="masthead-brand">LITE<strike>xam</strike>RATURE <i class="fas fa-book-open"></i></h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active"
+                   href="{{ path('create_character') }}">Нов герой</a>
+                <a class="nav-link active"
+                   href="{{ path('create_author') }}">Нов автор</a>
+                <a class="nav-link active"
+                   href="{{ path('create_work') }}">Нова творба</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="nav-link active"
+                   href="{{ path('homepage') }}">Начало</a>
+                <a class="nav-link active"
+                   href="{{ path('show_author_all') }}">Автори</a>
+                <a class="nav-link active"
+                   href="{{ path('show_work_all') }}">Творби</a>
+                <a class="nav-link active"
+                   href="{{ path('show_genre_all') }}">Жанрове</a>
+                <a class="nav-link active"
+                   href="{{ path('show_character_all') }}">Персонажи</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover">
+        {% block body %}{% endblock %}
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Created by <a href="https://github.com/DanielGeorgiev"><i class="fab fa-github"></i>Daniel Georgiev</a>
+                and idea inspired by <a href="https://github.com/NikolayKolibarov"><i class="fab fa-github"></i>Nikolay
+                    Kolibarov</a>, © 2020
+            </p>
+        </div>
+    </footer>
+</div>
+
+
+{% block javascripts %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+

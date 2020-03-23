@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Нов герой
+{% endblock %}
+
+{% block body %}
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-horizontal" action="{{ path('create_character') }}" method="POST">
+                <fieldset>
+                    <legend>Нова Творба</legend>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="hero_name">Име *</label>
+                        <input type="text" class="form-control" minlength="2" maxlength="255" required id="hero_name"
+                               placeholder="Име на героя"
+                               name="hero[name]">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="hero_work">Творба *</label>
+                        <div class="col-sm-12">
+                            {{ form_widget(form.work) }}
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-primary" href="{{ path('homepage') }}">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Add new work</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

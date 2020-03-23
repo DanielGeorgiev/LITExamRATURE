@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br/>
+    <h1>Жанрове</h1>
+    <br/>
+    {% for genre in genres %}
+        <div class="bg-white rounded box-shadow">
+            <h2 style="color: #000000; font-style: italic" class="d-block text-gray-dark">{{ genre.name }}</h2>
+
+            <hr/>
+
+            {% for work in genre.works %}
+                <div class="bg-white rounded box-shadow">
+                    <p style="color:#000000;">{{ work.name }}</p>
+                </div>
+            {% endfor %}
+            <br/>
+        </div>
+        <hr/>
+    {% endfor %}
+{% endblock %}
+
+{% block title %}
+    Жанрове
+{% endblock %}
+

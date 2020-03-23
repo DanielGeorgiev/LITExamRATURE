@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Начало
+{% endblock %}
+
+{% block body %}
+	<h1 class="cover-heading">Здравейте!</h1>
+	<p class="lead">Това е моят уеб проект - направен с цел подготовка за задължителния изпит по БЕЛ и за упражнение на web developing уменията ми!</p>
+	<p class="lead">
+		<a href="{{ path('show_author_all') }}" class="btn btn-lg btn-secondary">Супер! Нека видим авторите...</a>
+	</p>
+{% endblock %}
