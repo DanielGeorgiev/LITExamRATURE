@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Тест Жанрове
+{% endblock %}
+
+{% block body %}
+    <br/>
+    <br/>
+    <fieldset>
+        <legend>Тест за жанровете</legend>
+        <br/>
+        {% for work in works %}
+            <p>Жанрът на "{{ work.name }}" е?</p>
+
+            <button onclick="showAnswer({{ work.id }}, 'work')">Покажи отговора</button>
+
+            <div style="display: none" id="work_{{ work.id }}">{{ work.genre.name }}</div>
+
+            <hr/>
+        {% endfor %}
+    </fieldset>
+{% endblock %}
+
+{%  block javascripts %}
+
+{% endblock %}

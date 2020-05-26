@@ -20,22 +20,55 @@
         <div class="inner">
             <h3 class="masthead-brand">LITE<strike>xam</strike>RATURE <i class="fas fa-book-open"></i></h3>
             <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link active"
-                   href="{{ path('create_character') }}">Нов герой</a>
-                <a class="nav-link active"
-                   href="{{ path('create_author') }}">Нов автор</a>
-                <a class="nav-link active"
-                   href="{{ path('create_work') }}">Нова творба</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="nav-link active"
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Създаване
+                    </button>
+                    <div class="dropdown-menu">
+
+                        <a class="dropdown-item"
+                           href="{{ path('create_character') }}">Нов герой</a>
+                        <a class="dropdown-item"
+                           href="{{ path('create_author') }}">Нов автор</a>
+                        <a class="dropdown-item"
+                           href="{{ path('create_work') }}">Нова творба</a>
+                    </div>
+                </div>
+
+                &nbsp;&nbsp; 
+
+                <div class="dropdown ">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Тестове
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           href="{{ path('test_genres') }}">Жанрове</a>
+                        <a class="dropdown-item"
+                           href="{{ path('test_characters') }}">Герои</a>
+                        <a class="dropdown-item"
+                           href="{{ path('test_works') }}">Творби</a>
+                    </div>
+                </div>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
+
+                <a class="btn btn-outline-light"
                    href="{{ path('homepage') }}">Начало</a>
-                <a class="nav-link active"
+                &nbsp;
+                <a class="btn btn-outline-light"
                    href="{{ path('show_author_all') }}">Автори</a>
-                <a class="nav-link active"
+                &nbsp;
+                <a class="btn btn-outline-light"
                    href="{{ path('show_work_all') }}">Творби</a>
-                <a class="nav-link active"
+                &nbsp;
+                <a class="btn btn-outline-light"
                    href="{{ path('show_genre_all') }}">Жанрове</a>
-                <a class="nav-link active"
+                &nbsp;
+                <a class="btn btn-outline-light"
                    href="{{ path('show_character_all') }}">Персонажи</a>
             </nav>
         </div>
@@ -57,6 +90,7 @@
 
 
 {% block javascripts %}{% endblock %}
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -66,6 +100,24 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<script>
+    function showAnswer(id, type) {
+        let x = document.getElementById(undefined);
+
+        if (type === "work") {
+            x = document.getElementById("work_" + id);
+        }
+        if (type === "character") {
+            x = document.getElementById("character_" + id);
+        }
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
 

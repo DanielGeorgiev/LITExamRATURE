@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Тест Герои
+{% endblock %}
+
+{% block body %}
+    <br/>
+    <br/>
+    <fieldset>
+        <legend>Тест за героите</legend>
+        <br/>
+        {% for character in characters %}
+            <p>От коя творба е {{ character.name }}?</p>
+
+            <button onclick="showAnswer({{ character.id }}, 'character')">Покажи отговора</button>
+
+            <div style="display: none" id="character_{{ character.id }}">{{ character.work.name }}</div>
+
+            <hr/>
+        {% endfor %}
+    </fieldset>
+{% endblock %}
+

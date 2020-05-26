@@ -21,12 +21,6 @@
                         <h6 style="color: #000000">Жанр: {{ work.genre.name }}</h6>
                         <a style="color: #000000" href="{{ work.infoSource }}" target="_blank">> Виж в zamatura.eu <</a>
                     </div>
-                    <div class="card mb-4 box-shadow">
-                        <h6 style="color: #000000">Персонажи:</h6>
-                        {% for hero in work.heroes %}
-                            <h6 style="color: #B0413E">{{ hero.name }}</h6>
-                        {% endfor %}
-                    </div>
                 </div>
             {% endfor %}
         </div>

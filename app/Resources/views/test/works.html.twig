@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Тест Творби
+{% endblock %}
+
+{% block body %}
+    <br/>
+    <br/>
+        <fieldset>
+            <legend>Тест за творбите</legend>
+            <br/>
+            {% for work in works %}
+                <p>Авторът на "{{ work.name }}" е?</p>
+
+                <button onclick="showAnswer({{ work.id }}, 'work')">Покажи отговора</button>
+
+                <div style="display: none" id="work_{{ work.id }}">{{ work.author.name }}</div>
+
+                <hr/>
+            {% endfor %}
+        </fieldset>
+{% endblock %}
+
